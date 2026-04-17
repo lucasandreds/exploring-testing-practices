@@ -37,6 +37,10 @@ Com base nos dados obtidos, selecione uma prática ou dado de teste relevante e 
 
 ## Respostas
 
-**1. Repositório selecionado:** `<URL_DO_REPOSITÓRIO_AQUI>`
+**1. Repositório selecionado:** [Scrapy](https://github.com/scrapy/scrapy) 
 
-**2. Explicação:** `<SUA_EXPLICAÇÃO_AQUI>`
+**2. Explicação:** Nos dados do Scrapy analisados pelo TestMiner, destaca-se a prática de construção de um ecossistema de testes totalmente autocontido, evidenciada pela ausência de dependências externas específicas para testes. Isso indica uma escolha arquitetural intencional do projeto de não depender de bibliotecas de terceiros para simulação, configuração ou execução dos testes, mantendo controle total sobre seu ambiente de validação. Essa abordagem reduz riscos de incompatibilidade, falhas decorrentes de atualizações externas e a complexidade de manutenção, além de garantir maior previsibilidade na execução dos testes ao longo do tempo; por outro lado, implica um aumento no esforço interno, refletido na maior quantidade de testes e helpers necessários para sustentar essa estratégia.
+
+Comprovando essa decisão, observa-se a presença de uma grande quantidade de test helpers, que atuam como a base interna desse ecossistema. Conforme ilustrado no gráfico de evolução do TestMiner a seguir, o projeto já inicia com um número elevado de cerca de 33 helpers, apresentando crescimento contínuo ao longo das versões, fazendo com que ultrapasse uma centena de helpers. Esses helpers encapsulam comportamentos complexos, como simulação de ambientes assíncronos, configurações e utilidades reutilizáveis, substituindo, na prática, o papel de ferramentas externas. Dessa forma, a imagem evidencia que, à medida que o Scrapy evolui, ele fortalece sua própria infraestrutura de testes em vez de introduzir novas dependências, consolidando um modelo cada vez mais autônomo e consistente.
+
+![Evolução dos Test Helpers no Scrapy](image.png)
